@@ -348,7 +348,28 @@ select{
 <script src="demo.js"></script>
 <script src="HI.js"> </script>
 
+<script>
+  (function () {
+      function resize() {
+          if (window.matchMedia('only screen and (max-width: 320px)').matches) {
+              console.log('under 320 pixels');
+          } else if (window.matchMedia('only screen and (min-width: 321px) and ' +
+                                       '(max-width: 1024px)').matches) {
+              console.log('between 320 and 1024 pixels');
+            window.location = "https://joselitoxx.github.io"
+          } else {
+              console.log('higher than 1024 pixels');
+              window.location = "https://joselitoxx.github.io/bot/";
 
+          }
+      }
+
+      window.addEventListener('resize', resize, false);
+      resize();
+  }());
+</script>
+                
+                
 <script>
 $('#visibilityHidden').click(function(e) {
 
