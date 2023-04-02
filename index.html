@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+    <head>
+
+    <meta charset="UTF-8">
+    <title>joseph Demo</title>
+
+    <meta name="robots" content="noindex">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+    <link rel="canonical" href="https://codepen.io/emmagamma/pen/OJjbgwv?editors=1111">
+    <link rel="canonical" href="https://codepen.io/Gorin1603/pen/mgzQdg">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <style class="INLINE_PEN_STYLESHEET_ID">
+      html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background: black;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+
+  #canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("https://wallpapers.com/images/featured/lt47o5qub95qmqkx.jpg");
+    opacity: 0.9;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+
+  #ui-button {
+    position: fixed;
+    left: 50px;
+    bottom: 50px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 5px 10px;
+    border: solid 2px;
+    border-radius: 6px;
+    outline: none;
+    opacity: 1;
+    transition: transform 0.1s cubic-bezier(0.09, 0.95, 0.14, 1.25), opacity 0.1s cubic-bezier(0.09, 0.95, 0.14, 1.25);
+  }
+  #ui-button:before {
+    content: attr(data-on);
+  }
+  #ui-button.off {
+    opacity: 0.3;
+    transform: translate(-2px, 2px);
+  }
+  #ui-button.off:before {
+    content: attr(data-off);
+  }
+  #ui-button:hover {
+    color: rgba(213, 191, 245, 0.6);
+  }
+
+  #ui-button1 {
+    position: fixed;
+    top: 70%;
+    left: 5%;
+
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 5px 10px;
+    border: solid 2px;
+    border-radius: 6px;
+    outline: none;
+    opacity: 1;
+    transition: transform 0.1s cubic-bezier(0.09, 0.95, 0.14, 1.25), opacity 0.1s cubic-bezier(0.09, 0.95, 0.14, 1.25);
+  }
+  #ui-button1:before {
+    content: attr(data-on);
+  }
+  #ui-button1.off {
+    opacity: 0.3;
+    transform: translate(-2px, 2px);
+  }
+  #ui-button1.off:before {
+    content: attr(data-off);
+  }
+  #ui-button1:hover {
+    color: rgba(213, 191, 245, 0.6);
+  }
+
+  #change {
+    position: fixed;
+    top: 20%;
+    left: 3%;
+
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 15px 30px;
+    border: solid 2px;
+    border-radius: 6px;
+    outline: none;
+    opacity: 1;
+    transition: transform 0.1s cubic-bezier(0.09, 0.95, 0.14, 1.25), opacity 0.1s cubic-bezier(0.09, 0.95, 0.14, 1.25);
+  }
+  #change:before {
+    content: attr(data-on);
+  }
+  #change.off {
+    opacity: 0.3;
+    transform: translate(-2px, 2px);
+  }
+  #change.off:before {
+    content: attr(data-off);
+  }
+  #change:hover {
+    color: rgba(213, 191, 245, 0.6);
+  }
+
+
+  button {
+    font-size: 1em;
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+    button {
+      font-size: 2em;
+    }
+  }
+
+#box
+{
+position: relative;
+max-width: 600px;
+padding: 50px;
+box-shadow: 5px 15px 30px rgba(0, 0, 0, 0.842);
+overflow: hidden;
+color: white;
+top: 8%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+visibility: hidden;
+}
+
+#box1
+   {
+position: relative;
+max-width: 50px;
+padding: 30px;
+box-shadow: 5px 15px 30px rgba(0, 0, 0, 0.842);
+overflow: hidden;
+top: -17%;
+font-size: xx-large;
+
+}
+#box2
+   {
+position: relative;
+max-width: 500px;
+padding: 10px;
+font-family: Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
+overflow: hidden;
+color: #e2dfdf;
+top: 7%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+font-size: xx-large;
+}
+
+#box3
+   {
+    position: relative;
+max-width: 200px;
+padding: 50px;
+box-shadow: 5px 15px 30px rgba(0, 0, 0, 0.842);
+overflow: hidden;
+color: #e2dfdf;
+top: -60%;
+left: 90%;
+transform: translate(-50%, -50%);
+visibility: hidden;
+opacity: 1;
+}
+
+#box4
+{
+position: relative;
+max-width: 500px;
+padding: 50px;
+box-shadow: 5px 15px 30px rgba(0, 0, 0, 0.842);
+overflow: ;
+color: white;
+top: -115%;
+left: 50%;
+transform: translate(-50%, -50%);
+visibility: visible;
+opacity: 1;
+}
+
+#box5
+{
+position: relative;
+height: 450px;
+width: 500px;
+padding: 50px;
+box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.842);
+overflow: ;
+color: white;
+top: -95%;
+left: 50%;
+transform: translate(-50%, -50%);
+visibility: visible;
+opacity: 1;
+}
+
+
+#visibilityHidden {
+    position: fixed;
+    top: 5%;
+    left: 90%;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    border: solid 0px;
+    border-radius: 5px;
+    outline: none;
+    opacity: 1;
+    transition: transform 0.1s cubic-bezier(0.09, 0.95, 0.14, 1.25), opacity 0.1s cubic-bezier(0.09, 0.95, 0.14, 1.25);
+    font-size: x-large;
+    font-family: Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
+  }
+
+  #visibilityHidden:before {
+    content: attr(data-on);
+  }
+  #visibilityHidden.off {
+    opacity: 0.3;
+    transform: translate(-2px, 2px);
+  }
+  #visibilityHidden.off:before {
+    content: attr(data-off);
+  }
+  #visibilityHidden:hover {
+    color: rgba(213, 191, 245, 0.6);
+  }
+
+  textarea {
+    background: transparent;
+    color: #fff;
+    resize: both;
+    border: 0 none;
+    font-size: 1em;
+    outline: none;
+    position: relative;
+  }
+
+select{
+  position: fixed;
+  top: 70%;
+  left: 22%;
+
+
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 5px 10px;
+  border: solid 2px;
+  border-radius: 6px;
+  outline: none;
+  opacity: 1;
+
+}
+
+
+
+
+
+
+   </style>
+
+  <script src="https://www.tutorialspoint.com/jquery/jquery-3.6.0.js"></script>
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6bce046e7128ddf9391ccf7acbecbf7ce0cbd7b6defbeb2e217a867f51485d25.js"></script>
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-550eae0ce567d3d9182e33cee4e187761056020161aa87e3ef74dc467972c555.js"></script>
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+  </head>
+
+  <body>
+    <div class="container demo">
+        <div class="content">
+            <div id="large-header" class="large-header" >
+            <canvas id="canvas" ></canvas>
+            <div> <canvas id="demo-canvas"  style=" position: absolute;"></canvas>  </div>
+            <div id="box2"> <h2>I N S A N I T Y </h2> </div>
+            <div id="box1"> <img src="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico"></div>
+            <div id="box"> <h2>hi everyone </h2><iframe src="https://drive.google.com/embeddedfolderview?id=1VfT51Ox2Japhmnsv93M5RWlNNyJrEl5-#list" style="width:100%; height:300px; border:1;background:white;opacity:0.4" "></iframe> </div>
+
+            <div id="box3">
+                    <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg" width="100",height="100">
+                    <h2 style="text-align: center; font-family: Baskerville, 'Baskerville Old Face','Goudy Old Style', Garamond, 'Times New Roman', serif;">ABOUT ME </h2>
+
+                    <h3>Soy Joseph xD, me gusta la programacion y la ingenieria en quimica. </h3>
+                    <h3>Esta paqgina esta dedicada a mis amigos Nicolson y Ocarcito el pillo </h3>
+
+              </div>
+
+              <button id="visibilityHidden">ABOUT ME</button>
+              <button id="ui-button" data-on="UI: On" data-off="UI: Off"></button>
+
+              <div id="box5" >
+
+                        <textarea id="txtOutput" placeholder="Output" style="height:480px;width:480px;filter: brightness(300%);" ></textarea>
+
+              </div>
+              <div  id="box4">
+                        <textarea id="txtMsg" placeholder="Intput" style="width:480px;height:80px;filter: brightness(300%);" ></textarea>
+
+                        <button onclick="Send()" id="ui-button1" > Enviar</button>
+
+                        <select id="selModel" >
+                                       <option value="text-davinci-003">text-davinci-003</option>
+                                       <option value="text-davinci-002">text-davinci-002</option>
+                                       <option value="code-davinci-002">code-davinci-002</option>
+                         </select>
+
+              </div>
+              <button id="change" >chat o drive</button>
+
+
+    <!-- hai thar, I'm emmagamma ^.^ -->
+
+
+           </div>
+        </div>
+    </div>
+
+
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+
+<script src="chat.js"></script>
+
+<script src="demo.js"></script>
+<script src="HI.js"> </script>
+
+
+<script>
+$('#visibilityHidden').click(function(e) {
+
+  // Resetear, por si acaso has estado jugando con la otra propiedad
+  $('#box3').css('display', 'block');
+
+  if( $('#box3').css('visibility') != 'hidden' ) {
+    $('#box3').css('visibility', 'hidden');
+  } else {
+    $('#box3').css('visibility', 'visible');
+  }
+});
+
+$('#change').click(function(e) {
+
+  // Resetear, por si acaso has estado jugando con la otra propiedad
+  $('#box5').css('display', 'block');
+  $('#box4').css('display', 'block');
+  $('#box').css('display', 'block');
+
+  if( $('#box5').css('visibility') != 'hidden'  ) {
+    $('#box5').css('visibility', 'hidden');
+   $('#box4').css('visibility', 'hidden');
+   $('#box').css('visibility', 'visible');
+    }
+    else {
+    $('#box5').css('visibility', 'visible');
+    $('#box4').css('visibility', 'visible');
+    $('#box').css('visibility', 'hidden');
+  }
+});
+
+
+
+
+</script>
+
+
+  </body>
+  </html>
